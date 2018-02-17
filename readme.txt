@@ -22,3 +22,15 @@ Prerequisites:
 
     Install a MongoDB GUI, Robo 3T, formerly known as RoboMongo.
         You can then run mongod from the terminal to start up the MongoDB service on your machine.
+
+=========================================
+Tutorial
+=========================================
+1) Create src dir with subdirs models and controllers
+    models for schema, controllers for logic
+2) Define dog schema -> src/models/dog.js
+
+-- Added .eslintrc file to set to es6 and eliminate 'keyword const is reserved'
+
+3) Create dogs controller -> src/controllers/dog.js
+
