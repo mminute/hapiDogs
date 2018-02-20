@@ -33,4 +33,18 @@ Tutorial
 -- Added .eslintrc file to set to es6 and eliminate 'keyword const is reserved'
 
 3) Create dogs controller -> src/controllers/dog.js
+4) Create server.js to map controllers to routes/handlers
 
+Todo: setup babel and eslint similar to scotchHapiTutorial
+
+2) npm init
+3) Setup eslint
+    https://eslint.org/docs/user-guide/getting-started
+
+4) From root dir:
+    npm install --save babel-core babel-preset-es2015 hapi
+
+5) Setup .babelrc
+    { "presets": [ "es2015" ] }
+
+6) Add node_modules to gitignore file

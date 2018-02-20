@@ -57,7 +57,7 @@ exports.update = (request, h) => {
   });
 }
 
-// Delete Dog by ID
+// DELETE Dog by ID
 exports.remove = (request, h) => {
   return Dog.findById(request.params.id).exec((err, dog) => {
     if (err) return { dberror: err };
