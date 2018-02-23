@@ -50,8 +50,9 @@ GENERIC SETUP *****************************************
 2) Create src dir with subdirs models and controllers
     models for schema, controllers for logic
 3) Define dog schema -> src/models/dog.js
-
--- Added .eslintrc file to set to es6 and eliminate 'keyword const is reserved'
-
 4) Create dogs controller -> src/controllers/dog.js
 5) Create server.js to map controllers to routes/handlers
+6) Add bootstrap.js file to route to make it easier to fire up the app
+7) Add "start" to "scripts" in package.json
+
+6) Fire It Up!

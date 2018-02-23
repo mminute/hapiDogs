@@ -46,8 +46,12 @@ server.route({
     mongoose
       .connect(MongoDBUrl, {})
       .then(
-        () => { console.log('Connected to Mongo server'); },
-        (err) => { console.log(err); },
+        () => {
+          console.log('Connected to Mongo server');
+        },
+        (err) => {
+          console.log(err);
+        },
       );
 
     console.log(`Server running at: ${server.info.uri}`);
