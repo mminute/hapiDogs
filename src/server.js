@@ -39,16 +39,17 @@ server.route({
   handler: DogController.remove,
 });
 
-// const init = (async () => {
-//   await server.start();
-// });
-
 (async () => {
   try {
     await server.start();
     // Once started, connect to Mongo through Mongoose
-    mongoose.connect(MongoDBUrl, {}).then(() => {
-      console.log('Connected to Mongo server')}, err => { console.log(err) });
+    mongoose
+      .connect(MongoDBUrl, {})
+      .then(
+        () => { console.log('Connected to Mongo server'); },
+        (err) => { console.log(err); },
+      );
+
     console.log(`Server running at: ${server.info.uri}`);
   } catch (err) {
     console.log(err);
