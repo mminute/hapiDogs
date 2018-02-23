@@ -60,3 +60,6 @@ GENERIC SETUP *****************************************
     mongo
     npm start
     start Robo 3T
+    Start arc app to interact more easily
+
+TODO: how to seed database?
