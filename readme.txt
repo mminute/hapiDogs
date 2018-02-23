@@ -56,3 +56,7 @@ GENERIC SETUP *****************************************
 7) Add "start" to "scripts" in package.json
 
 6) Fire It Up!
+    mongod
+    mongo
+    npm start
+    start Robo 3T
