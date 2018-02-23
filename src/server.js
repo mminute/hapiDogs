@@ -1,8 +1,7 @@
-'use strict'
-
 const Hapi = require('hapi');
 const mongoose = require('mongoose');
 const DogController = require('./controllers/dog.js');
+
 const MongoDBUrl = 'mongodb://localhost:27017/dogapi';
 
 const server = new Hapi.Server({
@@ -40,18 +39,18 @@ server.route({
   handler: DogController.remove,
 });
 
-const init = (async () => {
-  await server.start();
-});
+// const init = (async () => {
+//   await server.start();
+// });
 
-// (async () => {
-//   try {  
-//     await server.start();
-//     // Once started, connect to Mongo through Mongoose
-//     mongoose.connect(MongoDBUrl, {}).then(() => { console.log(`Connected to Mongo server`) }, err => { console.log(err) });
-//     console.log(`Server running at: ${server.info.uri}`);
-//   }
-//   catch (err) {  
-//     console.log(err)
-//   }
-// })();
+(async () => {
+  try {
+    await server.start();
+    // Once started, connect to Mongo through Mongoose
+    mongoose.connect(MongoDBUrl, {}).then(() => {
+      console.log('Connected to Mongo server')}, err => { console.log(err) });
+    console.log(`Server running at: ${server.info.uri}`);
+  } catch (err) {
+    console.log(err);
+  }
+})();

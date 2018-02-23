@@ -26,25 +26,32 @@ Prerequisites:
 =========================================
 Tutorial
 =========================================
-1) Create src dir with subdirs models and controllers
+GENERIC SETUP *****************************************
+
+1) npm init
+2) Setup eslint
+    https://eslint.org/docs/user-guide/getting-started
+    a. npm install eslint --save-dev
+    b. ./node_modules/.bin/eslint --init
+    c. To Run: ./node_modules/.bin/eslint yourfile.js
+3) From root dir:
+    npm install --save babel-core babel-preset-es2015 hapi
+4) Setup .babelrc
+    { "presets": [ "es2015" ] }
+5) Create .gitignore file at root
+    add node_modules to .gitignore
+
+GENERIC SETUP *****************************************
+1) Install Mongoose
+    Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+    https://www.npmjs.com/package/mongoose
+        npm install --save mongoose
+
+2) Create src dir with subdirs models and controllers
     models for schema, controllers for logic
-2) Define dog schema -> src/models/dog.js
+3) Define dog schema -> src/models/dog.js
 
 -- Added .eslintrc file to set to es6 and eliminate 'keyword const is reserved'
 
-3) Create dogs controller -> src/controllers/dog.js
-4) Create server.js to map controllers to routes/handlers
-
-Todo: setup babel and eslint similar to scotchHapiTutorial
-
-2) npm init
-3) Setup eslint
-    https://eslint.org/docs/user-guide/getting-started
-
-4) From root dir:
-    npm install --save babel-core babel-preset-es2015 hapi
-
-5) Setup .babelrc
-    { "presets": [ "es2015" ] }
-
-6) Add node_modules to gitignore file
+4) Create dogs controller -> src/controllers/dog.js
+5) Create server.js to map controllers to routes/handlers

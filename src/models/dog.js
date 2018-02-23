@@ -1,7 +1,6 @@
-'use strict';
-
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+
+const { Schema } = mongoose.Schema;
 
 const dogModel = new Schema({
   name: { type: String, required: true, index: { unique: true } },
