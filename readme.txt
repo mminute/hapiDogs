@@ -23,6 +23,10 @@ Prerequisites:
     Install a MongoDB GUI, Robo 3T, formerly known as RoboMongo.
         You can then run mongod from the terminal to start up the MongoDB service on your machine.
 
+    Use Advance Rest Client or Postman for testing
+        https://install.advancedrestclient.com/#/install
+        https://www.getpostman.com/
+
 =========================================
 Tutorial
 =========================================
@@ -63,3 +67,37 @@ GENERIC SETUP *****************************************
     Start arc app to interact more easily
 
 TODO: how to seed database?
+
+Securing with JSON web tokens
+"Whenever the user wants to access a protected route or resource (an endpoint), the user agent must send the JWT, usually in the Authorization header using the Bearer schema, along with the request."
+
+"When the API receives a request with a JWT, the first thing it does is to validate the token. This consists of a series of steps, and if any of these fails then, the request must be rejected. The following list shows the validation steps needed:
+
+Check that the JWT is well-formed.
+Check the signature.
+Validate the standard claims.
+Check the Client permissions (scopes)."
+
+7) Sign up for Auth0 (https://auth0.com)
+8) On Auth0 create a new API
+9) Install new dependencies
+    npm install jwks-rsa salzhrani/hapi-auth-jwt2#v-17 --save
+=============================
+The hapi-auth-jwt2 module is a library that validates a JSON Web Token in your headers, query or cookies for your application. At the time of this writing, a PR has been submitted to support Hapi v17. We can only make use of the repo by installing it via the GitHub repo.
+
+The jwks-rsa module is a library that helps retrieve RSA public keys from a JSON Web Key Set endpoint.
+
+We just secured all the post, put, and delete API endpoints with JWT. If a user accesses these API endpoint/route without a valid access token or no token at all, it returns an error. Try it out.
+
+Go ahead and test it with a valid access token. Head over to the test tab of your newly created API on your Auth0 dashboard.
+    - Find 'Copy Token on dashboard'
+=============================
+
+10) Added back mongoose.connect() after await server.start()
+
+-- Encountered problem with auth0/node-jwks-rsa where in
+    module module.exports.hapiJwt2Key
+        return function secretProvider(decoded, cb)
+        Hapi v17 no longer provides a callback funtion
+            Fix exists but has not been landed into auth0 repository
+                https://github.com/auth0/node-jwks-rsa/pull/34/files
